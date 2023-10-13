@@ -1,0 +1,3 @@
+<app-form-joke (jokeCreated)="servicio.addJoke($event)"></app-form-joke>
+<app-joke *ngFor="let joke of servicio.getJokes()" [joke]="joke" (removeJoke)="servicio.removeJoke($event)" 
+(newJoke)="servicio.nuevoJoke($event)" (thisJoke)="servicio.actualJoke($event)"></app-joke>

@@ -1,0 +1,19 @@
+<div *ngIf="!editarJoke">
+    <h4 class = "card-title">{{joke.getPregunta()}}</h4>
+    <p class="card-text" [hidden]="joke.getOculto()">{{joke.getRespuesta()}}</p>
+    <button (click)="joke.ocultar()" class="btn btn-warning">Pulsar</button>
+    <button (click)="remove()" class="btn btn-danger">Borrar</button>
+    <button (click)="edicion()" class="btn btn-info">Editar</button>
+    <br><br><br>
+</div>
+
+<div *ngIf="editarJoke">
+    <p>Pregunta:<input class = "card-title" type="text" value="{{joke.getPregunta()}}" #pregunta/></p>
+    <p>Respuesta:<input class="card-text" type="text" value="{{joke.getRespuesta()}}" #respuesta/></p>
+    <br>
+    <button (click)="aceptar(pregunta.value, respuesta.value)" class="btn btn-info">Aceptar</button>
+    <button (click)="edicion()" class="btn btn-danger">Cancelar</button>
+    <br><br><br>
+</div>
+
+
